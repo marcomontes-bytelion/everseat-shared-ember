@@ -1,7 +1,7 @@
 {
   "name": "everseat-shared-ember",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Everseat shared ember code - models, adapters, serializers, etc",
   "directories": {
     "doc": "doc",
@@ -36,6 +36,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-load-initializers": "^0.5.0",
+    "ember-lodash": "0.0.9",
     "ember-resolver": "^2.0.3",
     "ember-try": "^0.1.2",
     "loader.js": "^4.0.0"
@@ -44,9 +45,13 @@
     "ember-addon"
   ],
   "dependencies": {
+    "active-model-adapter": "2.1.1",
     "ember-cli-babel": "^5.1.5"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "after": [
+      "active-model-adapter"
+    ]
   }
 }

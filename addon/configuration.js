@@ -15,6 +15,7 @@ const { getWithDefault } = Ember;
 //   return ENV;
 // }
 const DEFAULTS = {
+  consumerApp: true,
   cookieDomain: '.everseat.com',
   appRootURL: '//dashboard.everseat.com',
   location: {
@@ -35,6 +36,8 @@ const DEFAULTS = {
 };
 
 export default {
+
+  consumerApp: DEFAULTS.consumerApp,
 
   cookieDomain: DEFAULTS.cookieDomain,
 
