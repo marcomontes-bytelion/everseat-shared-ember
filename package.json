@@ -46,12 +46,16 @@
   ],
   "dependencies": {
     "active-model-adapter": "2.1.1",
+    "ember-i18n": "4.2.2",
+    "ember-simple-auth": "1.0.1",
     "ember-cli-babel": "^5.1.5"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "after": [
-      "active-model-adapter"
+      "active-model-adapter",
+      "ember-i18n",
+      "ember-simple-auth"
     ]
   }
 }

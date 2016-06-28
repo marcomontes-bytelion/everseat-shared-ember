@@ -6,7 +6,7 @@ module.exports = {
   name: 'everseat-shared-ember',
   isDevelopingAddon: function() {
     // Setting this to true will allow livereload when developing
-    return false;
+    return true;
   },
 
   // called during the build process, this method helps us perform setup logic or
