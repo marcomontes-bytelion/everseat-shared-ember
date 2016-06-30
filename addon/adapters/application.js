@@ -3,6 +3,7 @@ import Config from './../configuration';
 import { ActiveModelAdapter } from 'active-model-adapter';
 import RESTAdapter from 'ember-data/adapters/rest';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
+import _ from 'lodash/lodash';
 
 const sharedMixin = Ember.Mixin.create({
   headers: {
