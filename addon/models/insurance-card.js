@@ -1,6 +1,7 @@
+import ApplicationModel from './application';
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+export default ApplicationModel.extend({
   card_type: DS.attr('string'),
   patient_record_id: DS.attr('number'),
   user_id: DS.attr('number'),
