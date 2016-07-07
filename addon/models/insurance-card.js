@@ -10,5 +10,11 @@ export default DS.Model.extend({
   photo_url: DS.attr('string'),
   payer: DS.attr('string'),
   member_id: DS.attr('string'),
-  group_id: DS.attr('string')
+  group_id: DS.attr('string'),
+
+
+  photoUrl: Ember.computed('photo_url', 'photo', function() {
+    return this.get('photo.data') || this.get('photo_url') || this.get('photo_thumb') || '' ;
+  })
+
 });

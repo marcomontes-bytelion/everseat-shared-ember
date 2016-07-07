@@ -3,7 +3,7 @@ import Config from './../configuration';
 import { ActiveModelAdapter } from 'active-model-adapter';
 import RESTAdapter from 'ember-data/adapters/rest';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
-import _ from 'lodash/lodash';
+import lo from 'lodash/lodash';
 
 const sharedMixin = Ember.Mixin.create({
   headers: {
@@ -37,7 +37,7 @@ const restMixin = Ember.Mixin.create({
     if (processed && !this.isSuccess(status, headers, processed)) {
       let errors = [];
       if (!Ember.isArray(processed.errors || [])) {
-        _.keys(processed.errors).forEach((key) => {
+        lo.keys(processed.errors).forEach((key) => {
           errors.push({
             status: status,
             title: processed.errors[key],

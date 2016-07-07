@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('service:insurance-card-service', 'Unit | Service | insurance card service', {
+moduleFor('service:insurance-card', 'Unit | Service | insurance card', {
   // Specify the other units that are required for this test.
   // needs: ['service:foo']
 });
