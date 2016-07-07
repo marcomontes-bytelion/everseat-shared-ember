@@ -46,7 +46,9 @@
   ],
   "dependencies": {
     "active-model-adapter": "2.1.1",
+    "ember-cp-validations": "2.7.2",
     "ember-i18n": "4.2.2",
+    "ember-i18n-cp-validations": "2.5.0",
     "ember-simple-auth": "1.1.0",
     "ember-cli-babel": "^5.1.5"
   },
