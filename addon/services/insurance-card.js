@@ -1,18 +1,24 @@
 import Ember from 'ember';
-import _ from 'lodash/lodash';
+import lo from 'lodash/lodash';
 
 export default Ember.Service.extend({
 
   store: Ember.inject.service(),
 
-  buildCard(card_type) {
-    return this.get('store').createRecord('insurance-card', { card_type });
+  buildCard(params = {}) {
+    Ember.assert('user_id is missing', parseInt(params.user_id) != Math.isNaN);
+    return this.get('store').createRecord('insurance-card', params);
+  },
+
+  peekCard(cardId = null) {
+    Ember.assert('cardId is missing', parseInt(cardId) !== Math.isNaN);
+    return this.get('store').peekRecord('insurance-card', cardId);
   },
 
   createCard(userId, changes) {
-    const postdata = _.merge({
+    const postdata = lo.merge({
       user_id: userId
-    }, _.omit(changes, 'action'));
+    }, lo.omit(changes, 'action'));
     return this.get('store')
       .createRecord('insurance-card', postdata)
       .save();
@@ -26,10 +32,21 @@ export default Ember.Service.extend({
 
   updateCard(cardId, patchData) {
     let card = this.get('store').peekRecord('insurance-card', cardId);
-    _.keys(patchData).forEach((key) => {
+    lo.keys(patchData).forEach((key) => {
       card.set(key, patchData[key]);
     });
     return card.save();
+  },
+
+  clearPhoto(card) {
+    card.set('photo_file_name', null);
+    card.set('photo_thumb', null);
+    card.set('photo_url', null);
+    card.set('photo', null);
+  },
+
+  unloadRecord(card) {
+    this.get('store').unloadRecord(card);
   },
 
   doAction(userId, change) {
@@ -44,7 +61,7 @@ export default Ember.Service.extend({
         return this.destroyCard(change.id);
       case 'patch':
         Ember.assert('change.action=patch requires an id', change.id);
-        const patchData = _.omit(change, ['action', 'id']);
+        const patchData = lo.omit(change, ['action', 'id']);
         return this.updateCard(change.id, patchData);
       default:
         Ember.assert(`change.action is invalid ${action}`);
