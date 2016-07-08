@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import lodash from 'lodash/lodash';
+import lo from 'lodash/lodash';
 
 export default Ember.Service.extend({
 
@@ -16,9 +16,9 @@ export default Ember.Service.extend({
   },
 
   createCard(userId, changes) {
-    const postdata = lodash.merge({
+    const postdata = lo.merge({
       user_id: userId
-    }, lodash.omit(changes, 'action'));
+    }, lo.omit(changes, 'action'));
     return this.get('store')
       .createRecord('insurance-card', postdata)
       .save();
@@ -32,7 +32,7 @@ export default Ember.Service.extend({
 
   updateCard(cardId, patchData) {
     let card = this.get('store').peekRecord('insurance-card', cardId);
-    lodash.keys(patchData).forEach((key) => {
+    lo.keys(patchData).forEach((key) => {
       card.set(key, patchData[key]);
     });
     return card.save();
@@ -61,7 +61,7 @@ export default Ember.Service.extend({
         return this.destroyCard(change.id);
       case 'patch':
         Ember.assert('change.action=patch requires an id', change.id);
-        const patchData = lodash.omit(change, ['action', 'id']);
+        const patchData = lo.omit(change, ['action', 'id']);
         return this.updateCard(change.id, patchData);
       default:
         Ember.assert(`change.action is invalid ${action}`);
