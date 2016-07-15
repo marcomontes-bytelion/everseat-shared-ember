@@ -1,5 +1,6 @@
 import ApplicationModel from './application';
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default ApplicationModel.extend({
   card_type: DS.attr('string'),

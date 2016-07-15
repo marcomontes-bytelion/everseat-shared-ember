@@ -6,7 +6,7 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
 
   buildCard(params = {}) {
-    Ember.assert('user_id is missing', parseInt(params.user_id) != Math.isNaN);
+    Ember.assert('user_id is missing', parseInt(params.user_id) !== Math.isNaN);
     return this.get('store').createRecord('insurance-card', params);
   },
 
