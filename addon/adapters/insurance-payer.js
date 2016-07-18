@@ -1,7 +1,8 @@
 import ApplicationAdapter from './application';
+import Ember from 'ember';
 
 const InsurancePayerMixin = Ember.Mixin.create({
-  pathForType(modelName) {
+  pathForType() {
     return 'insurance_partners';
   }
 });
