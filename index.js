@@ -17,5 +17,6 @@ module.exports = {
 
     //app.import(app.bowerDirectory + '/x-button/dist/js/x-button.js');
     //app.import(app.bowerDirectory + '/x-button/dist/css/x-button.css');
+    target.import('vendor/everseat-shared-ember/register-version.js');
   }
 };
