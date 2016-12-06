@@ -1,7 +1,7 @@
 {
   "name": "everseat-shared-ember",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Everseat shared ember code - models, adapters, serializers, etc",
   "directories": {
     "doc": "doc",
@@ -32,6 +32,7 @@
     "ember-cli-release": "^0.2.9",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
+    "ember-cli-trackjs": "1.1.2",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.8.0",
     "ember-disable-prototype-extensions": "^1.1.0",
