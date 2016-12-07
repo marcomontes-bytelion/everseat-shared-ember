@@ -23,17 +23,22 @@ const sharedMixin = Ember.Mixin.create({
 });
 
 const restMixin = Ember.Mixin.create({
+  csrfCookie: Ember.inject.service(),
   trackjs: Ember.inject.service(),
   i18n: Ember.inject.service(),
   authorizer: 'authorizer:everseat',
   headers: Ember.computed(function() {
+    const csrf = this.get('csrfCookie').get();
     return {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'X-CSRF-TOKEN': Ember.$.cookie('XSRF-TOKEN')
+      'X-CSRF-TOKEN': csrf
     };
   }).volatile(),
   handleResponse(status, headers, payload, requestData) {
+    if (headers['Ev-Xsrf-Token']) {
+      this.get('csrfCookie').set(headers['Ev-Xsrf-Token']);
+    }
     const trackjs = this.get('trackjs');
     let processed = payload;
     if (processed && !this.isSuccess(status, headers, processed)) {
