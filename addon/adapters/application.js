@@ -23,6 +23,7 @@ const sharedMixin = Ember.Mixin.create({
 });
 
 const restMixin = Ember.Mixin.create({
+  trackjs: Ember.inject.service(),
   i18n: Ember.inject.service(),
   authorizer: 'authorizer:everseat',
   headers: Ember.computed(function() {
@@ -61,6 +62,12 @@ const restMixin = Ember.Mixin.create({
             }
           }]
         };
+      }
+      // Adding additional error handling information
+      const trackjs = this.get('trackjs');
+      if (trackjs && status === 422) {
+        const requestHeaders = this.get('headers');
+        trackjs.track([status,requestData, processed.errors, headers, requestHeaders]);
       }
     }
     return this._super(status, headers, processed, requestData);
