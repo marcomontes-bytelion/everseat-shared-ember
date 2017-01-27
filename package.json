@@ -1,7 +1,7 @@
 {
   "name": "everseat-shared-ember",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Everseat shared ember code - models, adapters, serializers, etc",
   "directories": {
     "doc": "doc",
@@ -48,7 +48,7 @@
   "dependencies": {
     "active-model-adapter": "2.1.1",
     "ember-cp-validations": "2.9.6",
-    "ember-i18n": "4.3.2",
+    "ember-i18n": "~4.3.2",
     "ember-i18n-cp-validations": "2.6.1",
     "ember-lodash": "0.0.10",
     "ember-simple-auth": "1.1.0",
