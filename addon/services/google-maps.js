@@ -1,26 +1,21 @@
 import Ember from 'ember';
 /**
- * This service lazy load googleMap api.
+ * This service lazy loads googleMap api.
  **/
 export default Ember.Service.extend({
 
-  scriptUrl: 'https://maps.googleapis.com/maps/api/js',
+  'api-key': null,
   isLoaded: Ember.computed.equal('state', 'loaded'),
   state: 'none',
 
   init() {
     this._super(...arguments);
     const config = Ember.getOwner(this).resolveRegistration('config:environment')['everseat'];
-    this.set('apiKey', config.google_api_key);
+    this.set('api-key', config.google_api_key);
   },
 
   normalizeUrl() {
-    var url = this.get('scriptUrl');
-    url += '?' + 'v=3';
-    if (this.get('apiKey')) {
-      url += '&key=' + this.get('apiKey');
-    }
-    return url;
+    return `https://maps.googleapis.com/maps/api/js?v=3&key=${this.get('api-key')}`;
   },
 
   loadScript() {
@@ -35,7 +30,7 @@ export default Ember.Service.extend({
     window.loadGmap = Ember.run.bind(this, function () {
       this.set('state', 'loaded');
     });
-    var url = this.normalizeUrl();
+    const url = this.normalizeUrl();
     return Ember.$.getScript(url, window.loadGmap).fail(function(){
       Ember.debug('GoogleMapsApi failed to load');
     });
