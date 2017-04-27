@@ -1,7 +1,7 @@
 {
   "name": "everseat-shared-ember",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Everseat shared ember code - models, adapters, serializers, etc",
   "directories": {
     "doc": "doc",

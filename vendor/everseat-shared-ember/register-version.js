@@ -1,1 +1,1 @@
-Ember.libraries.register('Everseat Shared Ember', '1.0.4');
+Ember.libraries.register('Everseat Shared Ember', '1.1.0');
