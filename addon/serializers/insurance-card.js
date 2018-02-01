@@ -1,5 +1,5 @@
 import AppSerializer from './application';
-import lo from 'lodash/lodash';
+import omit from 'lodash/omit';
 
 export default AppSerializer.extend({
   serialize(snapshot) {
@@ -13,7 +13,7 @@ export default AppSerializer.extend({
     }
     if (json.patient_record) {
       json.patient_record_id = json.patient_record;
-      json = lo.omit(json, ['patient_record']);
+      json = omit(json, ['patient_record']);
     }
     return json;
   }
