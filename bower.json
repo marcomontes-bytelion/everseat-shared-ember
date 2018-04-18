@@ -1,7 +1,7 @@
 {
   "name": "everseat-shared-ember",
   "dependencies": {
-    "ember": "2.16.2",
+    "ember": "2.18.2",
     "ember-cli-shims": "^1.2.0",
     "trackjs": "^2.10.2"
   }

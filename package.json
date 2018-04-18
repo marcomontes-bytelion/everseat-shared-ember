@@ -1,7 +1,7 @@
 {
   "name": "everseat-shared-ember",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Everseat shared ember code - models, adapters, serializers, etc",
   "directories": {
     "doc": "doc",
@@ -19,40 +19,40 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "broccoli-asset-rev": "^2.4.2",
-    "ember-ajax": "^3.0.0",
-    "ember-cli": "2.16.2",
+    "broccoli-asset-rev": "^2.7.0",
+    "ember-ajax": "^3.1.0",
+    "ember-cli": "2.18.2",
     "ember-cli-app-version": "^3.1.3",
     "ember-cli-dependency-checker": "^2.1.0",
     "ember-cli-htmlbars": "^2.0.3",
     "ember-cli-htmlbars-inline-precompile": "^1.0.2",
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-jshint": "^2.0.1",
-    "ember-cli-qunit": "^4.3.0",
+    "ember-cli-qunit": "^4.3.2",
     "ember-cli-release": "^0.2.9",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^2.2.0",
     "ember-cli-trackjs": "^2.1.0",
-    "ember-cli-uglify": "^2.0.0",
-    "ember-data": "^2.8.0",
+    "ember-cli-uglify": "^2.1.0",
+    "ember-data": "^2.18.2",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^2.0.0",
-    "ember-load-initializers": "^1.0.0",
-    "ember-resolver": "^4.5.0",
+    "ember-load-initializers": "^1.1.0",
+    "ember-resolver": "^4.5.5",
     "ember-try": "^0.2.2",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.7.0"
   },
   "keywords": [
     "ember-addon"
   ],
   "dependencies": {
     "active-model-adapter": "^2.2.0",
-    "ember-cli-babel": "^6.11.0",
-    "ember-cp-validations": "^3.5.1",
-    "ember-i18n": "^5.1.0",
-    "ember-i18n-cp-validations": "^3.0.2",
+    "ember-cli-babel": "^6.12.0",
+    "ember-cp-validations": "^3.5.2",
+    "ember-i18n": "^5.2.1",
+    "ember-i18n-cp-validations": "^3.1.0",
     "ember-lodash": "^4.18.0",
-    "ember-simple-auth": "^1.4.2"
+    "ember-simple-auth": "^1.6.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
