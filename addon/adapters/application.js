@@ -2,7 +2,6 @@ import Ember from 'ember';
 import Config from './../configuration';
 import { ActiveModelAdapter } from 'active-model-adapter';
 import RESTAdapter from 'ember-data/adapters/rest';
-import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 import keys from 'lodash/keys';
 
 const sharedMixin = Ember.Mixin.create({
@@ -25,7 +24,6 @@ const sharedMixin = Ember.Mixin.create({
 const restMixin = Ember.Mixin.create({
   trackjs: Ember.inject.service(),
   i18n: Ember.inject.service(),
-  authorizer: 'authorizer:everseat',
   headers: Ember.computed(function() {
     return {
       'Accept': 'application/json',
@@ -78,6 +76,6 @@ let appMixin = [sharedMixin];
 let appAdapter = ActiveModelAdapter;
 if (Config.consumerApp) {
   appAdapter = RESTAdapter;
-  appMixin.push( DataAdapterMixin, restMixin );
+  appMixin.push( restMixin );
 }
 export default appAdapter.extend(...appMixin);
