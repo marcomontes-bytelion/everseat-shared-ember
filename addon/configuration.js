@@ -16,7 +16,8 @@ const { getWithDefault } = Ember;
 // }
 const DEFAULTS = {
   consumerApp: true,
-  cookieDomain: '.everseat.com',
+  appDomain: '.everseat.com',
+  forceWhiteLabel: false,
   appRootURL: '//dashboard.everseat.com',
   location: {
     through_browser: true,
@@ -39,7 +40,9 @@ export default {
 
   consumerApp: DEFAULTS.consumerApp,
 
-  cookieDomain: DEFAULTS.cookieDomain,
+  appDomain: DEFAULTS.appDomain,
+
+  forceWhiteLabel: DEFAULTS.forceWhiteLabel,
 
   appRootURL: DEFAULTS.appRootURL,
 
